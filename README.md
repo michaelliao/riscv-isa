@@ -1,2 +1,5 @@
 # riscv-isa
-RISC-V Instruction Set Manual Online
+
+RISC-V ISA specifications:
+
+[https://michaelliao.github.io/riscv-isa/](https://michaelliao.github.io/riscv-isa/)
