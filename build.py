@@ -4,13 +4,6 @@ import re, os, json
 from urllib.request import urlopen
 
 
-def simple_asset(asset):
-    d = {}
-    for k in ["name", "browser_download_url", "size"]:
-        d[k] = asset[k]
-    return d
-
-
 def find_asset(assets, key, ext):
     for asset in assets:
         name = asset["name"]
@@ -41,7 +34,7 @@ def main():
     published_at = data["published_at"]
     version = published_at[: published_at.find("T")]
     print(f"version: {version}")
-    assets = [simple_asset(asset) for asset in data["assets"]]
+    assets = data["assets"]
     print(f"assets: {', '.join([asset['name'] for asset in assets])}")
     unprivileged_html = find_asset(assets, "unprivileged", "html")
     unprivileged_pdf = find_asset(assets, "unprivileged", "pdf")
