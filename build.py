@@ -20,6 +20,7 @@ def find_asset(assets, key, ext):
 
 
 def wget(url):
+    print(f"wget: {url}")
     resp = urlopen(url)
     if resp.status != 200:
         print(f"error: {resp.status}")
@@ -41,7 +42,7 @@ def main():
     version = published_at[: published_at.find("T")]
     print(f"version: {version}")
     assets = [simple_asset(asset) for asset in data["assets"]]
-    print(f"assets: {''.join([asset['name'] for asset in assets])}")
+    print(f"assets: {', '.join([asset['name'] for asset in assets])}")
     unprivileged_html = find_asset(assets, "unprivileged", "html")
     unprivileged_pdf = find_asset(assets, "unprivileged", "pdf")
     unprivileged_epub = find_asset(assets, "unprivileged", "epub")
