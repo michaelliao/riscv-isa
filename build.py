@@ -67,6 +67,8 @@ def main():
     with open(os.path.join(output_dir, "index.html"), "w") as f:
         f.write(index_html)
 
+    print("ok.")
+
 
 if __name__ == "__main__":
     main()
