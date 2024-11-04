@@ -3,7 +3,8 @@ name: Deploy RISC-V ISA Manual to Pages
 
 on:
   schedule:
-    - cron: "1 1 * * *"
+    # Run on Sunday 01:01 AM:
+    - cron: "1 1 * * SUN"
   push:
     branches: ["main"]
   pull_request:
